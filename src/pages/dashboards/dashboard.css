@@ -1,0 +1,171 @@
+/* dashboard.css - Dark theme for dashboards */
+/* === Theme variables for each role === */
+.dashboard-root.customer {
+  --theme-primary: #2563eb; /* blue */
+  --theme-primary-dark: #1e3a8a;
+  --theme-bg: linear-gradient(135deg, #000000 0%, #1e3a8a 50%, #000000 100%);
+}
+
+.dashboard-root.retailer {
+  --theme-primary: #059669; /* green */
+  --theme-primary-dark: #065f46;
+  --theme-bg: linear-gradient(135deg, #000000 0%, #065f46 50%, #000000 100%);
+}
+
+.dashboard-root.wholesaler {
+  --theme-primary: #9333ea; /* purple */
+  --theme-primary-dark: #581c87;
+  --theme-bg: linear-gradient(135deg, #000000 0%, #581c87 50%, #000000 100%);
+}
+
+/* === Shared theme styles using variables === */
+.dashboard-root {
+  min-height: 100vh;
+  color: #ffffff;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* buttons now use theme color */
+.btn-primary {
+  background: linear-gradient(180deg, var(--theme-primary) 0%, var(--theme-primary-dark) 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+/* container */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  padding: 1rem;
+  /* add a little right padding so floating cart doesn't overlap content */
+  padding-right: 120px;
+}
+
+/* Card */
+.card {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 1rem;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+  color: white;
+}
+
+/* Large card */
+.card-lg { padding: 1.5rem; border-radius: 16px; }
+
+/* Headings */
+.h1 { color: rgb(59, 130, 246); font-weight: 700; font-size: 1.6rem; }
+.h2 { font-weight: 600; font-size: 1.125rem; color: white; }
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(180deg, rgb(37, 99, 235) 0%, rgb(59, 130, 246) 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  color: rgb(148, 163, 184);
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-ghost:hover {
+  background: rgba(148, 163, 184, 0.1);
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: white;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.input:focus {
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+.input::placeholder {
+  color: rgb(148, 163, 184);
+}
+
+/* Sidebar */
+.sidebar { width: 250px; }
+.sidebar .nav-item { display:block; padding:0.6rem; border-radius:8px; color:#0f172a; text-decoration:none; }
+.sidebar .nav-item:hover { background:rgba(15,23,42,0.03); }
+
+/* Grid layouts */
+.grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem; }
+.grid-cards {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* Product image placeholder */
+.img-placeholder {
+  height: 160px;
+  border-radius: 8px;
+  background: linear-gradient(180deg,#f8fafc,#f1f5f9);
+  display:flex; align-items:center; justify-content:center;
+  color:#9aa6b2; font-weight:600;
+}
+
+/* Small helpers */
+.text-muted { color: rgb(148, 163, 184); }
+.badge { 
+  padding: .2rem .45rem; 
+  font-size: .75rem; 
+  border-radius: 6px; 
+  background: rgba(59, 130, 246, 0.2); 
+  color: rgb(148, 163, 184);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+.card-footer { display:flex; justify-content:space-between; align-items:center; margin-top:0.75rem; }
+.fixed-cart {
+  position: fixed;
+  z-index: 69;
+  /* default right/bottom will be set inline by component */
+}
+@media (max-width:900px) {
+  .sidebar { display:none; }
+  .grid-3 { grid-template-columns:1fr; }
+  .dashboard-container {
+    padding-right: 24px;
+  }
+  .fixed-cart {
+    left: 24px !important;
+    right: 24px !important;
+    bottom: 88px !important;
+    width: auto !important;
+  }
+}

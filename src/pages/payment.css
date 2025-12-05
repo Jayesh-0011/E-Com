@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.cod-btn {
+  background: #f59e0b; /* Amber / Yellow */
+  color: white;
+}
+
+.cod-btn:hover {
+  background: #d97706;
+}
+
+
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 35px;
+  border-radius: 18px;
+  width: 420px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+  text-align: center;
+  backdrop-filter: blur(12px);
+}
+
+.title {
+  margin: 0;
+  font-weight: 600;
+  color: #111;
+}
+
+.subtitle {
+  margin-top: 5px;
+  color: #555;
+  font-size: 14px;
+}
+
+.amount-input {
+  width: 80%;
+  padding: 12px;
+  font-size: 17px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-top: 20px;
+}
+
+.divider {
+  height: 1px;
+  background: #ddd;
+  margin: 20px 0;
+}
+
+.pay-label {
+  color: #333;
+  font-weight: 500;
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pay-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.pay-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.stripe-btn {
+  background: #635BFF;
+  color: white;
+}
+
+.stripe-btn:hover {
+  background: #5147FF;
+}
+
+.upi-btn {
+  background: #34A853;
+  color: white;
+}
+
+.upi-btn:hover {
+  background: #2D8F48;
+}
+
+/* UPI POPUP */
+.upi-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upi-box {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  text-align: center;
+  width: 300px;
+}
+
+.qr-code {
+  width: 150px;
+  margin: 15px 0;
+}
+
+.upi-input {
+  padding: 12px;
+  width: 90%;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+  font-size: 16px;
+}
+
+.pay-now {
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
+  background: #4F46E5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  background: #888;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
